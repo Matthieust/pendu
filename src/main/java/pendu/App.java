@@ -102,10 +102,12 @@ public final class App {
         }
         if (win){
             System.out.println("You win !");
+            scanner.close();
             return (win);
         }
         else{
             System.out.println("You lose !");
+            scanner.close();
             return (lose);
         }
     }
