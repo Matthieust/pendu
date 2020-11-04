@@ -1,5 +1,7 @@
 package pendu;
+
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Hello world!
@@ -7,13 +9,27 @@ import java.util.*;
 public final class App {
     private App() {
     }
+
+    public static String choseWord(){
+        List<String> word_list = new ArrayList<>();
+        int randomNum = ThreadLocalRandom.current().nextInt(0, 6 + 1);
+        word_list.add("WORD");
+        word_list.add("YOLO");
+        word_list.add("FOO");
+        word_list.add("MATTHIEU");
+        word_list.add("NEW");
+        word_list.add("TORTANK");
+        word_list.add("SIMPLON");
+        return word_list.get(randomNum);
+    }
+
     public static List<String> word(){
+        String chosenWord = choseWord();
         List<String> word = new ArrayList<>();
-        word.add("W");
-        word.add("O");
-        word.add("R");
-        word.add("D");
-        word.add("O");
+
+        for (int i = 0; i < chosenWord.length(); i++){
+            word.add(Character.toString(chosenWord.charAt(i)));
+        }
         return (word);
     }
 
@@ -82,7 +98,6 @@ public final class App {
             }
             else {
                 attempt--;
-                System.out.println("lettre PAS OK");
             }
         }
         if (win){
@@ -94,7 +109,6 @@ public final class App {
             return (lose);
         }
     }
-
     public static void main(String[] args) {
         List<String> word = word();
         List<String> blank_word = blankWord(word);
