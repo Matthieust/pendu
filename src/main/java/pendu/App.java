@@ -3,9 +3,6 @@ package pendu;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
-/**
- * Hello world!
- */
 public final class App {
     private App() {
     }
@@ -101,7 +98,7 @@ public final class App {
             }
         }
         if (win){
-            System.out.println("You win !");
+            System.out.printf("You win ! you have %d attempts left !%n", attempt);
             scanner.close();
             return (win);
         }
