@@ -98,7 +98,7 @@ public final class App {
             }
         }
         if (win){
-            System.out.printf("You win ! you have %d attempts left !%n", attempt);
+            System.out.printf("You win ! You have %d attempts left !%n", attempt);
             scanner.close();
             return (win);
         }
